@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.gnomezdesk" path="/org/gnome/shell/extensions/gnomezdesk/">
+    <key name="username" type="s">
+      <default>"default_user"</default>
+      <summary>Username for the service</summary>
+      <description>The username required to authenticate to the service.</description>
+    </key>
+    <key name="password" type="s">
+      <default>""</default>
+      <summary>Password for the service</summary>
+      <description>The password required to authenticate to the service.</description>
+    </key>
+  </schema>
+</schemalist>

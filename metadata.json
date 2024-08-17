@@ -1,8 +1,9 @@
 {
   "name": "gnomezdesk",
   "description": "Simple extension for clock in on zdesk",
-  "uuid": "filippoperettivr@libero.it",
+  "uuid": "gnomezdesk",
   "shell-version": [
     "46"
-  ]
+  ],
+  "setting-schema": "org.gnome.shell.extensions.gnomezdesk"
 }
