@@ -1,0 +1,8 @@
+{
+  "name": "gnomezdesk",
+  "description": "Simple extension for clock in on zdesk",
+  "uuid": "filippoperettivr@libero.it",
+  "shell-version": [
+    "46"
+  ]
+}
