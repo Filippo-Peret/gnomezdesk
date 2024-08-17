@@ -18,12 +18,11 @@
 
 import GObject from 'gi://GObject';
 import St from 'gi://St';
-import Gio from 'gi://Gio'
 
 import { Extension, gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
-
+//import HttpConnectionManager from './HttpConnectionManager';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
 const Indicator = GObject.registerClass(
@@ -34,13 +33,14 @@ const Indicator = GObject.registerClass(
                 icon_name: 'face-smile-symbolic',
                 style_class: 'system-status-icon',
             }));
-            const username = settings.get_string('username')
-            const password = settings.get_string('password')
             let clockIn = new PopupMenu.PopupMenuItem('Timbra Entrata');
             clockIn.connect('activate', () => {
                 const username = settings.get_string('username')
                 const password = settings.get_string('password')
-                Main.notify('Entrata Timbrata!', 'Entrata timbrata alle ore'+password);
+                //HttpConnectionManager(username, password)
+                Main.notify('Entrata Timbrata!', 'Entrata timbrata alle ore '
+                    + new Date().toLocaleTimeString());
+
             });
             this.menu.addMenuItem(clockIn);
 
@@ -48,7 +48,9 @@ const Indicator = GObject.registerClass(
             clockOut.connect('activate', () => {
                 const username = settings.get_string('username')
                 const password = settings.get_string('password')
-                Main.notify('Uscita Timbrata!', 'Uscita timbrata alle ore '+username)
+                //HttpConnectionManager(username, password)
+                Main.notify('Uscita Timbrata!', 'Uscita timbrata alle ore '
+                    + new Date().toLocaleTimeString());
             });
             this.menu.addMenuItem(clockOut)
         }

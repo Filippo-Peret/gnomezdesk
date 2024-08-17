@@ -3,6 +3,11 @@ import GLib from "gi://GLib";
 import St from "gi://St";
 
 export default class HttpConnectionManager{
+    constructor(username, password){
+        this.username = username
+        this.password = password
+    }
+    
     makeHttpRequest() {
         // URL to request
         const url = '';
